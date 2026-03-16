@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Company X</title>
+
+<title>Sobre Nosotros | Samuel Company X</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="IMG/logo.png">
+
 </head>
 
 <body>
@@ -17,12 +21,14 @@
 
 <!-- NAVBAR -->
 <header>
+
 <div class="logo">Samuel Company X</div>
 
 <div>
 <span class="menu-btn" onclick="openMenu()">☰</span>
 <button class="dark-btn" onclick="toggleDark()">🌙</button>
 </div>
+
 </header>
 
 <!-- MENU LATERAL -->
@@ -44,69 +50,104 @@
 
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
+
 <!-- HERO -->
+
 <section class="hero reveal">
 
-<h1>Samuel Company X</h1>
+<h1>Sobre Nosotros</h1>
 
 <div class="blue-line"></div>
 
 <p>
-Tecnología, software y hardware diseñados para crear soluciones modernas,
-seguras y eficientes.
+Conozca más sobre nuestra misión, visión y el propósito detrás de Samuel Company X.
 </p>
 
 </section>
 
 
 <!-- CONTENIDO -->
+
 <div class="container">
 
-<!-- QUIENES SOMOS -->
+<!-- NUESTRA HISTORIA -->
+
 <div class="content reveal">
 
 <div class="text">
 
-<h2>Quiénes Somos</h2>
+<h2>Nuestra Historia</h2>
 
 <p>
-Samuel Company X es una empresa enfocada en el desarrollo tecnológico y la innovación digital. Nos especializamos en la creación de software, páginas web modernas y soluciones electrónicas de hardware diseñadas para impulsar el crecimiento de negocios y proyectos en el entorno digital.
-
-Combinamos tecnología, diseño minimalista y seguridad informática para desarrollar soluciones eficientes, confiables y adaptadas a las necesidades de cada cliente. 
+Samuel Company X nace con el objetivo de impulsar la innovación tecnológica y ayudar a empresas y proyectos a desarrollarse en el mundo digital. Desde nuestros inicios, nos hemos enfocado en la creación de soluciones tecnológicas eficientes que combinan software, hardware y seguridad informática.
 </p>
 
 <p>
-Nuestro objetivo es ayudar a empresas y emprendedores a destacar, crecer y evolucionar en un mundo cada vez más conectado.
-
+Nuestro enfoque se basa en desarrollar herramientas modernas, funcionales y seguras que permitan a nuestros clientes mejorar su presencia digital y optimizar sus procesos tecnológicos.
 </p>
 
 </div>
 
 <div class="image">
-<img src="IMG/test.jpg" alt="imagen">
+<img src="IMG/test.jpg" alt="Historia de la empresa">
 </div>
 
 </div>
 
 
-<!-- SERVICIOS -->
+<!-- MISION -->
+
 <div class="content reveal">
 
 <div class="text">
 
-<h2>Servicios</h2>
+<h2>Misión</h2>
+
+<p>
+Nuestra misión es desarrollar soluciones tecnológicas innovadoras que ayuden a empresas, proyectos y emprendedores a crecer en el mundo digital. Buscamos crear software, páginas web y sistemas electrónicos que sean eficientes, seguros y fáciles de utilizar.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- VISION -->
+
+<div class="content reveal">
+
+<div class="text">
+
+<h2>Visión</h2>
+
+<p>
+Ser una empresa reconocida en el desarrollo de tecnología digital, destacando por la calidad de nuestros proyectos, la innovación constante y el compromiso con la seguridad informática y el diseño moderno.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- VALORES -->
+
+<div class="content reveal">
+
+<div class="text">
+
+<h2>Nuestros Valores</h2>
 
 <ul>
 
-<li>💻 Desarrollo de páginas web</li>
+<li>💡 Innovación tecnológica</li>
 
-<li>🛠 Desarrollo de software</li>
+<li>🔒 Seguridad informática</li>
 
-<li>🔐 Ciberseguridad</li>
+<li>⚙️ Desarrollo eficiente</li>
 
-<li>⚡ Electrónica y hardware</li>
+<li>🤝 Compromiso con los clientes</li>
 
-<li>📡 Automatización e IoT</li>
+<li>🚀 Mejora continua</li>
 
 </ul>
 
@@ -114,47 +155,20 @@ Nuestro objetivo es ayudar a empresas y emprendedores a destacar, crecer y evolu
 
 </div>
 
-
-<!-- PROYECTOS -->
-<div class="content reveal">
-
-<div class="text">
-
-<h2>Proyectos</h2>
-
-<p>
-Algunos de nuestros proyectos incluyen páginas web educativas,
-sistemas digitales, automatización electrónica y plataformas
-web modernas diseñadas para mejorar la experiencia del usuario.
-</p>
-
-</div>
-
 </div>
 
 
-<!-- CONTACTO -->
-<div class="content reveal">
+<!-- WHATSAPP -->
 
-<div class="text">
-
-<h2>Contacto</h2>
-
-<p>
-Si desea trabajar con nosotros o conocer más sobre nuestros proyectos,
-puede contactarnos por WhatsApp.
-</p>
-
-</div>
-
-</div>
 <a id="whatsapp-btn" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
+
 <footer>
 © 2026 Samuel Company X
 </footer>
+
 
 <script>
 
@@ -200,7 +214,7 @@ localStorage.removeItem("dark");
 }
 
 
-/* ANIMACION SCROLL */
+/* ANIMACION */
 
 const elements = document.querySelectorAll(".reveal");
 
@@ -221,29 +235,15 @@ entry.target.classList.remove("show");
 elements.forEach(el=>observer.observe(el));
 
 
-/* WHATSAPP AUTOMATICO */
+/* WHATSAPP */
 
 const whatsappBtn = document.getElementById("whatsapp-btn");
 
-let mensaje = "Hola Samuel Company X, vi su página web y me gustaría recibir información.";
-
-const pagina = window.location.pathname;
-
-if(pagina.includes("services")){
-mensaje = "Hola Samuel Company X, me interesa conocer más sobre sus servicios tecnológicos.";
-}
-
-const whatsappBtn = document.getElementById("whatsapp-btn");
-let mensaje = "Hola Samuel Company X, me interesa conocer sus proyectos.";
-whatsappBtn.href = "https://wa.me/7621116313?text=" + encodeURIComponent(mensaje);
-if(pagina.includes("certificates")){
-mensaje = "Hola Samuel Company X, vi sus certificados y quiero conocer más sobre su experiencia.";
-}
-
-if(pagina.includes("contact")){
-mensaje = "Hola Samuel Company X, quiero ponerme en contacto con ustedes.";
-}
+let mensaje = "Hola Samuel Company X, vi la sección Sobre Nosotros y me gustaría obtener más información.";
 
 whatsappBtn.href = "https://wa.me/7621116313?text=" + encodeURIComponent(mensaje);
 
 </script>
+
+</body>
+</html>

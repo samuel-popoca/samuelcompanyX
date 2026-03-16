@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certificados | Samuel Company X</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="IMG/logo.png">
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+<div class="spinner"></div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+
+<div class="logo">Samuel Company X</div>
+
+<div>
+<span class="menu-btn" onclick="openMenu()">☰</span>
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
+</div>
+
+</header>
+
+<!-- MENU -->
+<div class="side-menu" id="menu">
+
+<div class="menu-top">
+<strong>Samuel Company X</strong>
+<span class="close-btn" onclick="closeMenu()">✕</span>
+</div>
+
+<a href="index.html">🏠 Inicio</a>
+<a href="about.html">👤 Sobre Nosotros</a>
+<a href="projects.html">💻 Proyectos</a>
+<a href="services.html">⚙️ Servicios</a>
+<a href="certificates.html">🏆 Certificados</a>
+<a href="contact.html">📞 Contacto</a>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- HERO -->
+<section class="hero reveal">
+
+<h1>Certificados</h1>
+
+<div class="blue-line"></div>
+
+<p>
+Certificados y reconocimientos obtenidos en el área tecnológica.
+</p>
+
+</section>
+
+<!-- GALERIA -->
+<div class="container reveal">
+
+<h2>Nuestros Certificados</h2>
+
+<div class="gallery">
+
+<img src="IMG/cert1.jpg" onclick="openLightbox(0)">
+<img src="IMG/cert2.jpg" onclick="openLightbox(1)">
+<img src="IMG/cert3.jpg" onclick="openLightbox(2)">
+<img src="IMG/cert4.jpg" onclick="openLightbox(3)">
+<img src="IMG/cert5.jpg" onclick="openLightbox(4)">
+<img src="IMG/cert6.jpg" onclick="openLightbox(5)">
+<img src="IMG/cert7.jpg" onclick="openLightbox(6)">
+<img src="IMG/cert8.jpg" onclick="openLightbox(7)">
+<img src="IMG/cert9.jpg" onclick="openLightbox(8)">
+<img src="IMG/cert10.jpg" onclick="openLightbox(9)">
+<img src="IMG/cert11.jpg" onclick="openLightbox(10)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+
+<span class="close" onclick="closeLightbox()">&times;</span>
+
+<img class="lightbox-img" id="lightbox-img">
+
+<a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+<a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+</div>
+
+<!-- WHATSAPP -->
+<a id="whatsapp-btn" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<footer>
+© 2026 Samuel Company X
+</footer>
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load", () => {
+document.getElementById("loader").classList.add("hide");
+});
+
+
+/* MENU */
+
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+menu.classList.add("open");
+overlay.classList.add("show");
+}
+
+function closeMenu(){
+menu.classList.remove("open");
+overlay.classList.remove("show");
+}
+
+
+/* DARK MODE */
+
+if(localStorage.getItem("dark")){
+document.body.classList.add("dark");
+}
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+localStorage.setItem("dark",true);
+}else{
+localStorage.removeItem("dark");
+}
+
+}
+
+
+/* ANIMACION SCROLL */
+
+const elements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}else{
+entry.target.classList.remove("show");
+}
+
+});
+
+},{threshold:0.2});
+
+elements.forEach(el=>observer.observe(el));
+
+
+/* LIGHTBOX */
+
+let currentSlide = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+const images = [
+"IMG/cert1.jpg",
+"IMG/cert2.jpg",
+"IMG/cert3.jpg",
+"IMG/cert4.jpg",
+"IMG/cert5.jpg",
+"IMG/cert6.jpg",
+"IMG/cert7.jpg",
+"IMG/cert8.jpg",
+"IMG/cert9.jpg",
+"IMG/cert10.jpg",
+"IMG/cert11.jpg"
+];
+
+function openLightbox(index){
+
+currentSlide = index;
+
+lightbox.classList.add("show");
+
+lightboxImg.src = images[currentSlide];
+
+}
+
+function closeLightbox(){
+
+lightbox.classList.remove("show");
+
+}
+
+function changeSlide(n){
+
+currentSlide += n;
+
+if(currentSlide < 0) currentSlide = images.length - 1;
+
+if(currentSlide >= images.length) currentSlide = 0;
+
+lightboxImg.src = images[currentSlide];
+
+}
+
+/* cerrar si se hace clic fuera de la imagen */
+
+lightbox.addEventListener("click", (e)=>{
+if(e.target === lightbox){
+closeLightbox();
+}
+});
+
+/* cerrar con ESC */
+
+document.addEventListener("keydown",(e)=>{
+if(e.key === "Escape"){
+closeLightbox();
+}
+});
+
+/* WHATSAPP */
+
+const whatsappBtn = document.getElementById("whatsapp-btn");
+
+let mensaje = "Hola Samuel Company X, vi sus certificados y me gustaría obtener más información.";
+
+whatsappBtn.href = "https://wa.me/7621116313?text=" + encodeURIComponent(mensaje);
+
+
+</script>
+
+</body>
+</html>

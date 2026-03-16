@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Company X</title>
+
+<title>Servicios | Samuel Company X</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="IMG/logo.png">
+
 </head>
 
 <body>
@@ -17,15 +21,17 @@
 
 <!-- NAVBAR -->
 <header>
+
 <div class="logo">Samuel Company X</div>
 
 <div>
 <span class="menu-btn" onclick="openMenu()">☰</span>
 <button class="dark-btn" onclick="toggleDark()">🌙</button>
 </div>
+
 </header>
 
-<!-- MENU LATERAL -->
+<!-- MENU -->
 <div class="side-menu" id="menu">
 
 <div class="menu-top">
@@ -47,85 +53,74 @@
 <!-- HERO -->
 <section class="hero reveal">
 
-<h1>Samuel Company X</h1>
+<h1>Servicios</h1>
 
 <div class="blue-line"></div>
 
 <p>
-Tecnología, software y hardware diseñados para crear soluciones modernas,
-seguras y eficientes.
+Ofrecemos soluciones tecnológicas modernas en software, hardware y seguridad informática.
 </p>
 
 </section>
 
 
-<!-- CONTENIDO -->
 <div class="container">
 
-<!-- QUIENES SOMOS -->
-<div class="content reveal">
+<!-- SERVICIO 1 -->
+<div class="service-card reveal">
 
-<div class="text">
-
-<h2>Quiénes Somos</h2>
+<h2>💻 Desarrollo de páginas web</h2>
 
 <p>
-Samuel Company X es una empresa enfocada en el desarrollo tecnológico y la innovación digital. Nos especializamos en la creación de software, páginas web modernas y soluciones electrónicas de hardware diseñadas para impulsar el crecimiento de negocios y proyectos en el entorno digital.
-
-Combinamos tecnología, diseño minimalista y seguridad informática para desarrollar soluciones eficientes, confiables y adaptadas a las necesidades de cada cliente. 
-</p>
-
-<p>
-Nuestro objetivo es ayudar a empresas y emprendedores a destacar, crecer y evolucionar en un mundo cada vez más conectado.
-
+Diseñamos y desarrollamos páginas web modernas, rápidas y optimizadas para empresas, negocios y proyectos personales.
 </p>
 
 </div>
 
-<div class="image">
-<img src="IMG/test.jpg" alt="imagen">
-</div>
 
-</div>
+<!-- SERVICIO 2 -->
+<div class="service-card reveal">
 
-
-<!-- SERVICIOS -->
-<div class="content reveal">
-
-<div class="text">
-
-<h2>Servicios</h2>
-
-<ul>
-
-<li>💻 Desarrollo de páginas web</li>
-
-<li>🛠 Desarrollo de software</li>
-
-<li>🔐 Ciberseguridad</li>
-
-<li>⚡ Electrónica y hardware</li>
-
-<li>📡 Automatización e IoT</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<!-- PROYECTOS -->
-<div class="content reveal">
-
-<div class="text">
-
-<h2>Proyectos</h2>
+<h2>🛠 Desarrollo de software</h2>
 
 <p>
-Algunos de nuestros proyectos incluyen páginas web educativas,
-sistemas digitales, automatización electrónica y plataformas
-web modernas diseñadas para mejorar la experiencia del usuario.
+Creamos soluciones de software personalizadas para mejorar procesos, automatizar tareas y optimizar sistemas digitales.
+</p>
+
+</div>
+
+
+<!-- SERVICIO 3 -->
+<div class="service-card reveal">
+
+<h2>🔐 Ciberseguridad</h2>
+
+<p>
+Implementamos estrategias de seguridad informática para proteger sistemas, datos y plataformas digitales frente a amenazas.
+</p>
+
+</div>
+
+
+<!-- SERVICIO 4 -->
+<div class="service-card reveal">
+
+<h2>⚡ Electrónica y hardware</h2>
+
+<p>
+Desarrollamos soluciones electrónicas y proyectos de hardware orientados a la innovación tecnológica.
+</p>
+
+</div>
+
+
+<!-- SERVICIO 5 -->
+<div class="service-card reveal">
+
+<h2>📡 Automatización e IoT</h2>
+
+<p>
+Diseñamos sistemas de automatización y dispositivos conectados para mejorar procesos mediante Internet de las Cosas.
 </p>
 
 </div>
@@ -133,21 +128,8 @@ web modernas diseñadas para mejorar la experiencia del usuario.
 </div>
 
 
-<!-- CONTACTO -->
-<div class="content reveal">
+<!-- WHATSAPP -->
 
-<div class="text">
-
-<h2>Contacto</h2>
-
-<p>
-Si desea trabajar con nosotros o conocer más sobre nuestros proyectos,
-puede contactarnos por WhatsApp.
-</p>
-
-</div>
-
-</div>
 <a id="whatsapp-btn" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
@@ -164,7 +146,6 @@ window.addEventListener("load", () => {
 document.getElementById("loader").classList.add("hide");
 });
 
-
 /* MENU */
 
 const menu = document.getElementById("menu");
@@ -179,7 +160,6 @@ function closeMenu(){
 menu.classList.remove("open");
 overlay.classList.remove("show");
 }
-
 
 /* DARK MODE */
 
@@ -199,8 +179,7 @@ localStorage.removeItem("dark");
 
 }
 
-
-/* ANIMACION SCROLL */
+/* ANIMACION */
 
 const elements = document.querySelectorAll(".reveal");
 
@@ -221,29 +200,15 @@ entry.target.classList.remove("show");
 elements.forEach(el=>observer.observe(el));
 
 
-/* WHATSAPP AUTOMATICO */
+/* WHATSAPP */
 
 const whatsappBtn = document.getElementById("whatsapp-btn");
 
-let mensaje = "Hola Samuel Company X, vi su página web y me gustaría recibir información.";
-
-const pagina = window.location.pathname;
-
-if(pagina.includes("services")){
-mensaje = "Hola Samuel Company X, me interesa conocer más sobre sus servicios tecnológicos.";
-}
-
-const whatsappBtn = document.getElementById("whatsapp-btn");
-let mensaje = "Hola Samuel Company X, me interesa conocer sus proyectos.";
-whatsappBtn.href = "https://wa.me/7621116313?text=" + encodeURIComponent(mensaje);
-if(pagina.includes("certificates")){
-mensaje = "Hola Samuel Company X, vi sus certificados y quiero conocer más sobre su experiencia.";
-}
-
-if(pagina.includes("contact")){
-mensaje = "Hola Samuel Company X, quiero ponerme en contacto con ustedes.";
-}
+let mensaje = "Hola Samuel Company X, me gustaría recibir información sobre sus servicios.";
 
 whatsappBtn.href = "https://wa.me/7621116313?text=" + encodeURIComponent(mensaje);
 
 </script>
+
+</body>
+</html>
